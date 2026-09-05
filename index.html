@@ -12,12 +12,26 @@
 </head>
 <body>
 
-  <div id="intro" class="intro">
-    <div class="intro-card">
-      <span class="eyebrow">Nuestra historia de amor</span>
-      <h1><span id="introNovia">Nombre</span><small>&</small><span id="introNovio">Nombre</span></h1>
-      <p id="introFecha">24 · 01 · 2027</p>
-      <button id="abrirBtn" class="btn btn-light">Abrir invitación</button>
+   <div id="intro" class="intro">
+    <div class="intro-card envelope-scene">
+      <span class="eyebrow">Una invitación para ti</span>
+      <div class="envelope-wrap" id="envelopeWrap" aria-label="Sobre de invitación. Toca el sello para abrirlo." role="button" tabindex="0">
+        <div class="envelope" id="envelope">
+          <div class="envelope-paper">
+            <span class="paper-eyebrow">Con mucha alegría</span>
+            <strong><span id="paperNovia">Juan</span> <small>&amp;</small> <span id="paperNovio">Jessi</span></strong>
+            <span class="paper-date" id="paperFecha">17 · 10 · 2026</span>
+          </div>
+          <div class="envelope-back"></div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <button id="abrirBtn" class="wax-seal" aria-label="Abrir invitación">
+            <span>J&amp;J</span>
+          </button>
+        </div>
+      </div>
+      <p class="intro-hint">Toca el sello para abrir</p>
+      <p class="intro-date" id="introFecha">17 · 10 · 2026</p>
     </div>
   </div>
 
