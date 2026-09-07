@@ -12,8 +12,25 @@
 </head>
 <body>
 
-   <div id="intro" class="intro">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="anilloGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f6d989"/>
+        <stop offset="50%" stop-color="#c9932f"/>
+        <stop offset="100%" stop-color="#f6d989"/>
+      </linearGradient>
+    </defs>
+    <symbol id="rosaBlanca" viewBox="0 0 140 140">
+      <g fill="none" stroke="url(#anilloGrad)" stroke-width="5">
+        <circle cx="55" cy="70" r="32"/>
+        <circle cx="88" cy="70" r="32"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <div id="intro" class="intro">
     <div class="intro-card envelope-scene">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <span class="eyebrow">Una invitación para ti</span>
       <div class="envelope-wrap" id="envelopeWrap" aria-label="Sobre de invitación. Toca el sello para abrirlo." role="button" tabindex="0">
         <div class="envelope" id="envelope">
@@ -44,6 +61,7 @@
   <main id="pagina" class="hidden">
 
     <section class="hero">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="botanicals botanical-left">✿</div>
       <div class="botanicals botanical-right">❧</div>
       <div class="hero-overlay"></div>
@@ -61,8 +79,8 @@
       </div>
     </section>
 
-    <!-- 💗 NUESTRA HISTORIA -->
     <section class="section cream story">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="story-decoration story-decoration-top">❦</div>
 
       <div class="container narrow story-intro reveal">
@@ -85,6 +103,7 @@
     </section>
 
     <section class="section navy countdown-section">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container reveal">
         <p class="eyebrow light">La cuenta regresiva</p>
         <h2>Falta muy poco</h2>
@@ -97,7 +116,8 @@
       </div>
     </section>
 
-<section class="section blush parents">
+    <section class="section blush parents">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container narrow reveal">
         <p class="eyebrow">Con la bendición de nuestros padres</p>
         <h2>Padres de los novios</h2>
@@ -124,8 +144,8 @@
       </div>
     </section>
 
-<section class="section cream locations">
-
+    <section class="section cream locations">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container">
         <div class="location-card reveal">
           <div class="location-icon">♡</div>
@@ -147,10 +167,10 @@
           <a id="mapaRecepcion" class="btn btn-navy" href="#" target="_blank" rel="noopener">Ver ubicación</a>
         </div>
       </div>
-
     </section>
 
-<section class="section blush timeline-section">
+    <section class="section blush timeline-section">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container reveal">
         <p class="eyebrow">El gran día</p>
         <h2>Itinerario</h2>
@@ -158,12 +178,8 @@
       </div>
     </section>
 
-
-    <!-- ================================
-         PADRES DE LOS NOVIOS
-         ================================ -->
-
-<section class="section cream dress-code">
+    <section class="section cream dress-code">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container narrow reveal">
         <p class="eyebrow">Código de vestimenta</p>
         <h2 id="vestimentaTitulo">Formal</h2>
@@ -172,19 +188,17 @@
       </div>
     </section>
 
-<section class="section navy children">
+    <section class="section navy children">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container narrow reveal">
         <p class="eyebrow light">Una celebración para compartir</p>
         <h2>¡Los niños son bienvenidos!</h2>
-        <p id="ninosTexto">Queremos disfrutar este día rodeados de nuestras personas favoritas, incluyendo a los pequeños de la familia.</p>
+        <p id="ninosTexto">Queremos disfrutar este día rodeados de nuestras personas favoritas de la familia.</p>
       </div>
     </section>
 
-    <!-- ================================
-         💌 CONFIRMACIÓN DE ASISTENCIA
-         ================================ -->
-
-<section class="section cream rsvp" id="confirmacion">
+    <section class="section cream rsvp" id="confirmacion">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container narrow reveal">
         <p class="eyebrow">Confirma tu asistencia</p>
         <h2>¿Nos acompañas?</h2>
@@ -214,7 +228,8 @@
       </div>
     </section>
 
-<section class="section cream gallery">
+    <section class="section cream gallery">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="container">
         <p class="eyebrow reveal">Nuestros momentos</p>
         <h2 class="reveal">Galería</h2>
@@ -227,7 +242,8 @@
       </div>
     </section>
 
-<section class="section blush final-photo">
+    <section class="section blush final-photo">
+      <svg class="corner-rose corner-tl"><use href="#rosaBlanca"/></svg><svg class="corner-rose corner-br"><use href="#rosaBlanca"/></svg>
       <div class="photo-frame reveal">
         <img id="fotoFinal" src="fotos/final.jpg" alt="Fotografía final de los novios">
       </div>
@@ -240,15 +256,6 @@
 
     <footer class="footer navy">
       <p>Con amor, <span id="footerNombres"></span></p>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-<footer class="footer navy">
-      <p> ♥ <span id="footerNombres"></span></p>
     </footer>
   </main>
 
