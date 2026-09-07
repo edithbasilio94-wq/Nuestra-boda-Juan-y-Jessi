@@ -223,9 +223,18 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarContador();
   prepararAnimaciones();
   prepararMusica();
-  prepararRSVP();
 
-  $("abrirBtn").addEventListener("click", abrirInvitacion);
+  $("abrirBtn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    abrirInvitacion();
+  });
+
+  $("envelopeWrap").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      abrirInvitacion();
+    }
+  });
 });
 
 /* ==========================================
