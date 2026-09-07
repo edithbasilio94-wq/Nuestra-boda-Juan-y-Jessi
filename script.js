@@ -6,12 +6,9 @@ const BODA = {
   novia: "Juan",
   novio: "Jessi",
 
-  // Usa formato: "2026-10-17T12:00:00"
   fechaBoda: "2026-10-17T12:00:00",
-
   fechaTexto: "17 · 10 · 2026",
 
-  // 📍 MAPAS: pega aquí los enlaces de Google Maps de cada lugar.
   ceremonia: {
     hora: "12:00 PM",
     lugar: "Iglesia Encuentro con Dios",
@@ -26,26 +23,20 @@ const BODA = {
     mapa: "https://maps.app.goo.gl/jqPcbL7X7roBsNRW9"
   },
 
-  historia:
-    "No nos estábamos buscando, pero nos encontramos.",
+  historia: "No nos estábamos buscando, pero nos encontramos.",
 
   vestimenta: {
     titulo: "Elegante",
-    texto:
-      "Nos encantará verte celebrar con nosotros. El código de vestimenta es elegante."
+    texto: "Nos encantará verte celebrar con nosotros. El código de vestimenta es elegante."
   },
 
   ninos: {
     titulo: "¡Dios ha sido bueno!",
-    texto:
-      "Queremos disfrutar este día rodeados de nuestras personas favoritas."
+    texto: "Queremos disfrutar este día rodeados de nuestras personas favoritas."
   },
 
-  fraseFinal:
-    "Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos... Cantares 8:7",
+  fraseFinal: "Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos... Cantares 8:7",
 
-  // Pon aquí el nombre del archivo MP3 que subirás a la carpeta "musica".
-  // Ejemplo: "musica/nuestra-cancion.mp3"
   musica: "musica/nuestra-cancion.mp3",
 
   itinerario: [
@@ -56,11 +47,6 @@ const BODA = {
     { hora: "7:00 PM", titulo: "Canción", detalle: "¡Nuestra canción!" }
   ]
 };
-
-/* =========================================================
-   📸 FOTOS — cambia los nombres si tus archivos se llaman
-   distinto. Todos deben estar dentro de la carpeta "fotos".
-   ========================================================= */
 
 const FOTOS = {
   portada: "fotos/portada.jpg",
@@ -87,6 +73,9 @@ function aplicarDatos() {
   poner("introNovia", BODA.novia);
   poner("introNovio", BODA.novio);
   poner("introFecha", BODA.fechaTexto);
+  poner("paperNovia", BODA.novia);
+  poner("paperNovio", BODA.novio);
+  poner("paperFecha", BODA.fechaTexto);
 
   poner("noviaHero", BODA.novia);
   poner("novioHero", BODA.novio);
@@ -210,10 +199,8 @@ function abrirInvitacion() {
   if (envelope.classList.contains("open")) return;
   envelope.classList.add("open");
 
-  // Espera a que termine la animación del sobre (sello, solapa y tarjeta)
-  // antes de pasar a la invitación completa.
   setTimeout(() => {
-    intro.style.display = "none";
+    intro.classList.add("closed");
     pagina.classList.remove("hidden");
     window.scrollTo(0, 0);
 
@@ -223,13 +210,6 @@ function abrirInvitacion() {
       $("musicaBtn").textContent = "♫";
     });
   }, 1400);
-}
-  // Los navegadores suelen permitir música después de un clic del usuario.
-  audio.play().then(() => {
-    $("musicaBtn").textContent = "❚❚";
-  }).catch(() => {
-    $("musicaBtn").textContent = "♫";
-  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -250,22 +230,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-/* ==========================================
-   💌 RSVP
-   ========================================== */
-function prepararRSVP(){
-  const form = $("rsvpForm");
-  const mensaje = $("rsvpMensaje");
-  if(!form || !mensaje) return;
-  form.addEventListener("submit",(event)=>{
-    event.preventDefault();
-    const nombre = $("nombreInvitado").value.trim();
-    const asistencia = form.querySelector('input[name="asistencia"]:checked')?.value;
-    if(!nombre || !asistencia) return;
-    mensaje.textContent = asistencia === "Sí"
-      ? `¡Gracias, ${nombre}! Nos encantará celebrar contigo. 💗`
-      : `Gracias por avisarnos, ${nombre}. Te mandamos un abrazo. 💗`;
-    form.reset();
-  });
-}
