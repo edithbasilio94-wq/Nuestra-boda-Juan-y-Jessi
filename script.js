@@ -202,14 +202,28 @@ function prepararMusica() {
 }
 
 function abrirInvitacion() {
+  const envelope = $("envelope");
   const intro = $("intro");
   const pagina = $("pagina");
   const audio = $("musica");
 
-  intro.classList.add("closed");
-  pagina.classList.remove("hidden");
-  window.scrollTo(0, 0);
+  if (envelope.classList.contains("open")) return;
+  envelope.classList.add("open");
 
+  // Espera a que termine la animación del sobre (sello, solapa y tarjeta)
+  // antes de pasar a la invitación completa.
+  setTimeout(() => {
+    intro.style.display = "none";
+    pagina.classList.remove("hidden");
+    window.scrollTo(0, 0);
+
+    audio.play().then(() => {
+      $("musicaBtn").textContent = "❚❚";
+    }).catch(() => {
+      $("musicaBtn").textContent = "♫";
+    });
+  }, 1400);
+}
   // Los navegadores suelen permitir música después de un clic del usuario.
   audio.play().then(() => {
     $("musicaBtn").textContent = "❚❚";
