@@ -15,8 +15,17 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 button,a{font:inherit}
 a{text-decoration:none}
 .hidden{display:none!important}
-.intro{background:radial-gradient(circle at 50% 35%,#263552 0%,var(--navy) 58%,#10192c 100%);perspective:1200px}
-.envelope-scene{border:0;background:transparent;min-height:620px;position:relative}
+
+/* ---- Botones (base que faltaba) ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:12px 22px;border:1px solid transparent;border-radius:2px;text-transform:uppercase;letter-spacing:.14em;font-size:.65rem;font-weight:600;cursor:pointer;transition:transform .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:white}
+.btn-navy:hover{background:var(--navy-soft)}
+
+/* ---- Pantalla de introducción (sobre) ---- */
+.intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 35%,#263552 0%,var(--navy) 58%,#10192c 100%);perspective:1200px;transition:opacity .7s ease,visibility .7s ease}
+.intro.closed{opacity:0;visibility:hidden;pointer-events:none}
+.intro-card.envelope-scene{position:relative;width:100%;text-align:center;border:0;background:transparent;min-height:auto;display:flex;flex-direction:column;align-items:center}
 .envelope-scene>.eyebrow{color:var(--blush-light);margin-bottom:18px}
 .envelope-wrap{width:min(520px,94vw);height:360px;display:grid;place-items:center;cursor:pointer;outline:none}
 .envelope{position:relative;width:min(430px,82vw);height:270px;transform-style:preserve-3d;filter:drop-shadow(0 24px 30px rgba(0,0,0,.28));transition:transform .6s ease}
@@ -32,19 +41,18 @@ a{text-decoration:none}
 .envelope-paper strong{display:block;font-family:"Parisienne",cursive;font-weight:400;font-size:2.55rem;line-height:1.1}
 .envelope-paper strong small{font-family:"Cormorant Garamond",serif;font-size:1.4rem;margin:0 5px;color:#b59669}
 .paper-date{display:block;margin-top:18px;font-family:"Cormorant Garamond",serif;font-size:.95rem;letter-spacing:.28em;color:#75685e}
-.wax-seal{position:absolute;z-index:7;left:50%;bottom:-24px;transform:translateX(-50%);width:78px;height:78px;border:0;border-radius:50%;cursor:pointer;background:radial-gradient(circle at 32% 28%,#fff0b8 0 5%,#d9b66a 25%,#a9792d 64%,#76531d 100%);box-shadow:0 5px 7px rgba(0,0,0,.22),inset 0 2px 2px rgba(255,255,255,.45),inset 0 -5px 8px rgba(76,47,8,.25);color:#fff4cc;font-family:"Cormorant Garamond",serif;font-size:1.15rem;letter-spacing:.08em;transition:transform .3s ease,filter .3s ease}
+
+/* Sello: centrado justo en la punta de la solapa (donde termina el clip-path del flap, a 58% de alto) */
+.wax-seal{position:absolute;z-index:7;left:50%;top:58%;transform:translate(-50%,-50%);width:78px;height:78px;border:0;border-radius:50%;cursor:pointer;background:radial-gradient(circle at 32% 28%,#fff0b8 0 5%,#d9b66a 25%,#a9792d 64%,#76531d 100%);box-shadow:0 5px 7px rgba(0,0,0,.22),inset 0 2px 2px rgba(255,255,255,.45),inset 0 -5px 8px rgba(76,47,8,.25);color:#fff4cc;font-family:"Cormorant Garamond",serif;font-size:1.15rem;letter-spacing:.08em;transition:transform .3s ease,filter .3s ease}
 .wax-seal::before{content:"";position:absolute;inset:6px;border:1px solid rgba(255,245,200,.55);border-radius:48% 52% 46% 54%;transform:rotate(-8deg)}
 .wax-seal::after{content:"";position:absolute;inset:-4px;border-radius:47% 53% 50% 48%;border:2px solid rgba(166,126,50,.35);pointer-events:none}
 .wax-seal span{position:relative;z-index:2;text-shadow:0 1px 2px rgba(75,45,8,.5)}
-.envelope-wrap:hover .wax-seal{filter:brightness(1.08);transform:translateX(-50%) scale(1.04)}
+.envelope-wrap:hover .wax-seal{filter:brightness(1.08);transform:translate(-50%,-50%) scale(1.04)}
 .envelope.open .wax-seal{animation:sealOpen .7s ease forwards}
-@keyframes sealOpen{0%{transform:translateX(-50%) scale(1)}35%{transform:translateX(-50%) scale(1.12) rotate(-4deg)}100%{transform:translateX(-50%) scale(.88) translateY(20px);opacity:0}}
-.intro-hint{margin:8px 0 0;color:rgba(234,214,212,.85);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
-.intro-date{margin-top:12px!important;font-family:"Cormorant Garamond",serif;font-size:1rem!important;letter-spacing:.28em!important;color:var(--blush-light)!important}
-.intro.opening .intro-card{animation:introLift 1.1s ease both}
-@keyframes introLift{0%{transform:scale(1)}100%{transform:scale(1.02)}}
+@keyframes sealOpen{0%{transform:translate(-50%,-50%) scale(1)}35%{transform:translate(-50%,-50%) scale(1.12) rotate(-4deg)}100%{transform:translate(-50%,-50%) scale(.88) translateY(20px);opacity:0}}
+.intro-hint{margin:14px 0 0;color:rgba(234,214,212,.85);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;text-align:center}
+.intro-date{margin:12px 0 0;font-family:"Cormorant Garamond",serif;font-size:1rem;letter-spacing:.28em;color:var(--blush-light);text-align:center}
 @media(max-width:600px){
-  .envelope-scene{min-height:570px;padding:55px 12px}
   .envelope-wrap{height:330px}
   .envelope{height:230px}
   .envelope-paper strong{font-size:2.2rem}
@@ -62,7 +70,17 @@ a{text-decoration:none}
 .hero .amp{font-family:"Parisienne",cursive;font-size:.35em;line-height:1.6}
 .date-line{display:flex;align-items:center;justify-content:center;gap:14px;letter-spacing:.22em;font-size:.75rem}
 .date-line i{width:35px;height:1px;background:white}
-.section{padding:100px 20px;overflow:hidden}
+.section{position:relative;padding:100px 20px;overflow:hidden}
+
+/* ---- Rosas blancas de esquina ---- */
+.corner-rose{position:absolute;width:58px;height:58px;opacity:.7;pointer-events:none;z-index:1}
+.corner-tl{top:18px;left:18px}
+.corner-br{bottom:18px;right:18px;transform:scale(-1,-1)}
+.intro-card.envelope-scene .corner-rose{width:46px;height:46px;opacity:.65}
+.intro-card.envelope-scene .corner-tl{top:-6px;left:-6px}
+.intro-card.envelope-scene .corner-br{bottom:-6px;right:-6px}
+.navy .corner-rose,.children .corner-rose,.countdown-section .corner-rose{opacity:.6}
+@media(max-width:600px){.corner-rose{width:38px;height:38px}.corner-tl{top:10px;left:10px}.corner-br{bottom:10px;right:10px}}
 .container{width:min(980px,100%);margin:auto;text-align:center}
 .narrow{max-width:700px}
 .cream{background:var(--cream)}
@@ -132,8 +150,6 @@ a{text-decoration:none}
 .story-ending .script{color:var(--navy);font-size:2.8rem;margin:0}
 
 @media(max-width:600px){
-  .intro-card{min-height:570px}
-  .intro h1{font-size:3.5rem}
   .section{padding:80px 18px}
   .photo-frame{height:500px}
   .gallery-grid{grid-template-columns:1fr 1fr}
@@ -142,7 +158,6 @@ a{text-decoration:none}
   .timeline-item{grid-template-columns:55px 1fr;gap:35px}
   .timeline-dot{left:64px}
 }
-
 
 @media(max-width:600px){
   .story{padding-top:85px;padding-bottom:100px}
@@ -154,78 +169,22 @@ a{text-decoration:none}
   .story-ending .script{font-size:2.3rem}
 }
 
-
 /* ==========================================
    PADRES DE LOS NOVIOS
    ========================================== */
-
-.parents {
-  text-align: center;
-}
-
-.parents h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.7rem, 7vw, 4rem);
-  font-weight: 500;
-  color: var(--navy);
-  margin: 12px 0 45px;
-}
-
-.parents-grid {
-  max-width: 760px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 50px 1fr;
-  align-items: center;
-  gap: 18px;
-}
-
-.parent-group {
-  padding: 24px 15px;
-}
-
-.parent-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.7rem;
-  color: var(--navy);
-  margin: 0 0 18px;
-}
-
-.parent-names {
-  font-size: .82rem;
-  line-height: 1.9;
-  color: var(--ink);
-  margin: 0;
-}
-
-.epd {
-  font-size: .78em;
-  vertical-align: super;
-  margin-left: 3px;
-}
-
-.parent-divider {
-  color: var(--navy);
-  font-size: 1rem;
-}
-
-@media (max-width: 600px) {
-  .parents-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .parent-group {
-    padding: 10px 10px 28px;
-  }
-
-  .parent-divider {
-    margin: 0 0 8px;
-  }
-
-  .parent-title {
-    font-size: 1.55rem;
-  }
+.parents{text-align:center}
+.parents h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2.7rem,7vw,4rem);font-weight:500;color:var(--navy);margin:12px 0 45px}
+.parents-grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 50px 1fr;align-items:center;gap:18px}
+.parent-group{padding:24px 15px}
+.parent-title{font-family:"Cormorant Garamond",serif;font-size:1.7rem;color:var(--navy);margin:0 0 18px}
+.parent-names{font-size:.82rem;line-height:1.9;color:var(--ink);margin:0}
+.epd{font-size:.78em;vertical-align:super;margin-left:3px}
+.parent-divider{color:var(--navy);font-size:1rem}
+@media(max-width:600px){
+  .parents-grid{grid-template-columns:1fr;gap:10px}
+  .parent-group{padding:10px 10px 28px}
+  .parent-divider{margin:0 0 8px}
+  .parent-title{font-size:1.55rem}
 }
 
 /* ==========================================
@@ -248,96 +207,21 @@ a{text-decoration:none}
 .rsvp-message{min-height:24px;text-align:center;margin-top:18px;color:var(--navy);font-size:.78rem;line-height:1.5}
 @media(max-width:600px){.rsvp-options{grid-template-columns:1fr}}
 
-
 /* 🎀 PALETA ROSA PALO + AZUL MARINO */
-.section.blush {
-  background: var(--blush-light);
-}
-
-.section.navy {
-  background: var(--navy);
-}
-
-.btn-navy {
-  background: var(--navy);
-}
-
-.eyebrow,
-.story-intro h2,
-.story-ending .script,
-.parents h2,
-.parent-title,
-.rsvp h2 {
-  color: var(--navy);
-}
-
-.script {
-  color: var(--navy);
-}
-
-.divider,
-.ornament,
-.story-decoration,
-.story-line,
-.story-line::before,
-.story-line::after {
-  color: var(--blush);
-}
-
-.story-line {
-  background: var(--blush);
-}
-
-.rsvp-option input:checked + span {
-  background: var(--navy);
-  border-color: var(--navy);
-}
+.section.blush{background:var(--blush-light)}
+.section.navy{background:var(--navy)}
+.eyebrow,.story-intro h2,.story-ending .script,.parents h2,.parent-title,.rsvp h2{color:var(--navy)}
+.script{color:var(--navy)}
+.divider,.ornament,.story-decoration,.story-line,.story-line::before,.story-line::after{color:var(--blush)}
+.story-line{background:var(--blush)}
 
 /* ==========================================
    💒 CEREMONIA + RECEPCIÓN
    ========================================== */
-
-.locations {
-  position: relative;
-}
-
-.location-card {
-  max-width: 650px;
-  margin: 0 auto;
-  padding: 42px 28px 48px;
-  border: 1px solid rgba(23,35,61,.12);
-  background: rgba(255,255,255,.32);
-}
-
-.location-icon {
-  color: var(--blush);
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-}
-
-.location-card h2 {
-  font-family: "Cormorant Garamond", serif;
-  color: var(--navy);
-  font-size: clamp(2.5rem, 6vw, 3.7rem);
-  font-weight: 500;
-  margin: 12px 0 3px;
-}
-
-.location-card .time {
-  color: var(--navy);
-  margin: 0 0 8px;
-}
-
-.location-card p:not(.eyebrow):not(.time) {
-  color: var(--muted);
-  max-width: 430px;
-  margin: 0 auto 26px;
-  line-height: 1.8;
-  font-size: .78rem;
-}
-
-.location-separator {
-  color: var(--blush);
-  text-align: center;
-  padding: 25px 0;
-}
+.locations{position:relative}
+.location-card{max-width:650px;margin:0 auto;padding:42px 28px 48px;border:1px solid rgba(23,35,61,.12);background:rgba(255,255,255,.32)}
+.location-icon{color:var(--blush);font-size:1.5rem;margin-bottom:12px}
+.location-card h2{font-family:"Cormorant Garamond",serif;color:var(--navy);font-size:clamp(2.5rem,6vw,3.7rem);font-weight:500;margin:12px 0 3px}
+.location-card .time{color:var(--navy);margin:0 0 8px}
+.location-card p:not(.eyebrow):not(.time){color:var(--muted);max-width:430px;margin:0 auto 26px;line-height:1.8;font-size:.78rem}
+.location-separator{color:var(--blush);text-align:center;padding:25px 0}
