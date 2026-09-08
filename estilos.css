@@ -38,7 +38,7 @@ a{text-decoration:none}
 .envelope-paper{position:absolute;z-index:3;left:8%;top:7%;width:84%;height:86%;padding:38px 15px 20px;text-align:center;background:#fffdf9;border:1px solid rgba(91,67,47,.08);box-shadow:0 8px 18px rgba(50,35,25,.13);transform:translateY(35px);transition:transform 1s cubic-bezier(.2,.8,.2,1);color:var(--navy)}
 .envelope.open .envelope-paper{transform:translateY(-78px)}
 .paper-eyebrow{display:block;font-size:.55rem;letter-spacing:.27em;text-transform:uppercase;color:#9a8068;margin-bottom:17px}
-.envelope-paper strong{display:block;font-family:"Parisienne",cursive;font-weight:400;font-size:2.55rem;line-height:1.1}
+.envelope-paper strong{display:block;font-family:"Great Vibes",cursive;font-weight:400;font-size:2.55rem;line-height:1.1}
 .envelope-paper strong small{font-family:"Cormorant Garamond",serif;font-size:1.4rem;margin:0 5px;color:#b59669}
 .paper-date{display:block;margin-top:18px;font-family:"Cormorant Garamond",serif;font-size:.95rem;letter-spacing:.28em;color:#75685e}
 
