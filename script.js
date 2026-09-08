@@ -26,8 +26,8 @@ const BODA = {
   historia: "No nos estábamos buscando, pero nos encontramos.",
 
   vestimenta: {
-    titulo: "Elegante",
-    texto: "Nos encantará verte celebrar con nosotros. El código de vestimenta es elegante."
+    titulo: "Formal",
+    texto: "Nos encantará verte celebrar con nosotros. Te pedimos que reserves el color blanco para la novia."
   },
 
   ninos: {
