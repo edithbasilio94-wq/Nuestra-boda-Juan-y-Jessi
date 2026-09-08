@@ -221,11 +221,13 @@ function prepararRSVP() {
     }
   });
 
-} letyaAbierto = false;
+} 
+
+letyaAbierto = false;
 
 function abrirInvitacion() {
   if (yaAbierto) return;
-  letyaAbierto = true;
+  yaAbierto = true;
 
   const envelope = $("envelope");
   const intro = $("intro");
