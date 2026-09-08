@@ -124,7 +124,7 @@ a{text-decoration:none}
 .final-photo{text-align:center}
 .final-photo .photo-frame{height:560px;margin-top:0;margin-bottom:60px}
 .final-photo .script{font-size:3.2rem}
-.signature{font-family:"Parisienne",cursive;font-size:2.4rem;color:var(--navy)!important}
+.signature{font-family:"Great Vibes",cursive;font-size:2.4rem;color:var(--navy)!important}
 .footer{text-align:center;padding:35px 20px;font-family:"Cormorant Garamond",serif;font-size:1.2rem}
 .reveal{opacity:0;transform:translateY(25px);transition:opacity .9s ease,transform .9s ease}
 .reveal.visible{opacity:1;transform:none}
