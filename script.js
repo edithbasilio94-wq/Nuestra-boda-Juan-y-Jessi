@@ -187,7 +187,7 @@ function prepararMusica() {
     }
   });
 }
-function prepararRSVP() function prepararRSVP() {
+function prepararRSVP() {
   const form = $("rsvpForm");
   if (!form) return;
   const mensaje = $("rsvpMensaje");
@@ -221,7 +221,7 @@ function prepararRSVP() function prepararRSVP() {
     }
   });
 
-} yaAbierto = false;
+} letyaAbierto = false;
 
 function abrirInvitacion() {
   if (yaAbierto) return;
