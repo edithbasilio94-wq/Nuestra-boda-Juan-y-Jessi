@@ -187,7 +187,7 @@ function prepararMusica() {
     }
   });
 }
-function prepararRSVP() {
+function prepararRSVP() function prepararRSVP() {
   const form = $("rsvpForm");
   if (!form) return;
   const mensaje = $("rsvpMensaje");
@@ -198,6 +198,8 @@ function prepararRSVP() {
 
     try {
       const datos = new FormData(form);
+      const asistencia = datos.get("asistencia");
+
       const respuesta = await fetch(form.action, {
         method: "POST",
         body: datos,
@@ -205,7 +207,11 @@ function prepararRSVP() {
       });
 
       if (respuesta.ok) {
-        mensaje.textContent = "¡Gracias por confirmar! Te esperamos.";
+        if (asistencia === "Sí") {
+          mensaje.textContent = "¡Gracias por confirmar! Te esperamos.";
+        } else {
+          mensaje.textContent = "Gracias por avisarnos, te mandamos un abrazo.";
+        }
         form.reset();
       } else {
         mensaje.textContent = "Hubo un problema, intenta de nuevo.";
@@ -214,9 +220,7 @@ function prepararRSVP() {
       mensaje.textContent = "Hubo un problema, intenta de nuevo.";
     }
   });
-}
-
-let yaAbierto = false;
+} yaAbierto = false;
 
 function abrirInvitacion() {
   if (yaAbierto) return;
