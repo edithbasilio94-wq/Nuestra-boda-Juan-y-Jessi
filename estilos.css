@@ -62,13 +62,14 @@ a{text-decoration:none}
 .music-btn{position:fixed;z-index:80;right:20px;top:20px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(23,35,61,.25);background:rgba(248,244,238,.9);color:var(--navy);cursor:pointer;font-size:1.2rem}
 .hero{min-height:100svh;position:relative;display:grid;place-items:center;background:linear-gradient(rgba(23,35,61,.22),rgba(23,35,61,.35)),url("fotos/portada.jpg") center/cover no-repeat;text-align:center}
 .hero-overlay{position:absolute;inset:0;background:radial-gradient(circle at center,transparent 15%,rgba(23,35,61,.35))}
+.hero-content{position:relative;z-index:2;color:white;padding:40px 20px;margin-top:20vh}
 .hero-content{position:relative;z-index:2;color:white;padding:40px 20px}
 .hero .eyebrow{color:white}
 .hero .script{color:white;font-size:3rem}
 .hero h1{font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(4.5rem,15vw,9.5rem);line-height:1.05;margin:15px 0 40px;text-shadow:0 2px 20px rgba(0,0,0,.15)}
 .hero h1 span{display:block}
 .hero .amp{font-family:"Cormorant Garamond",serif;font-size:.28em;line-height:2.2;font-style:italic}
-.date-line{display:flex;align-items:center;justify-content:center;gap:14px;letter-spacing:.22em;font-size:.75rem}
+.date-line{display:flex;align-items:center;justify-content:center;gap:14px;letter-spacing:.22em;font-size:.90rem}
 .date-line i{width:35px;height:1px;background:white}
 .section{position:relative;padding:100px 20px;overflow:hidden}
 
