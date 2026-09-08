@@ -220,6 +220,7 @@ function prepararRSVP() function prepararRSVP() {
       mensaje.textContent = "Hubo un problema, intenta de nuevo.";
     }
   });
+
 } yaAbierto = false;
 
 function abrirInvitacion() {
