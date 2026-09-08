@@ -225,7 +225,7 @@ function prepararRSVP() {
 
 function abrirInvitacion() {
   if (yaAbierto) return;
-  yaAbierto = true;
+  letyaAbierto = true;
 
   const envelope = $("envelope");
   const intro = $("intro");
@@ -252,6 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarContador();
   prepararAnimaciones();
   prepararMusica();
+  prepararRSVP();
 
   $("abrirBtn").addEventListener("click", (e) => {
     e.stopPropagation();
