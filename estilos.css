@@ -9,6 +9,7 @@
   --muted:#6f6b69;
   --white:#fff;
 }
+html,body{overflow-x:hidden}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:"Montserrat",sans-serif;font-weight:400}
 img{display:block;width:100%;height:100%;object-fit:cover}
