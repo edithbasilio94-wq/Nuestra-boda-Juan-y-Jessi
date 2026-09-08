@@ -187,6 +187,34 @@ function prepararMusica() {
     }
   });
 }
+function prepararRSVP() {
+  const form = $("rsvpForm");
+  if (!form) return;
+  const mensaje = $("rsvpMensaje");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    mensaje.textContent = "Enviando...";
+
+    try {
+      const datos = new FormData(form);
+      const respuesta = await fetch(form.action, {
+        method: "POST",
+        body: datos,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (respuesta.ok) {
+        mensaje.textContent = "¡Gracias por confirmar! Te esperamos.";
+        form.reset();
+      } else {
+        mensaje.textContent = "Hubo un problema, intenta de nuevo.";
+      }
+    } catch {
+      mensaje.textContent = "Hubo un problema, intenta de nuevo.";
+    }
+  });
+}
 
 let yaAbierto = false;
 
