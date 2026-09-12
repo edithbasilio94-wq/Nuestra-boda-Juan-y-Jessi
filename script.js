@@ -7,7 +7,7 @@ const BODA = {
   novio: "Jessi",
 
   fechaBoda: "2026-10-24T12:00:00",
-  fechaTexto: "24 · 10 · 2026",
+  fechaTexto: "17 · 10 · 2026",
 
   ceremonia: {
     hora: "12:00 PM",
