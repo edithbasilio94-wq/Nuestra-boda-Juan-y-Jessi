@@ -35,7 +35,7 @@ const BODA = {
     texto: "Queremos disfrutar este día rodeados de nuestras personas favoritas."
   },
 
-  fraseFinal: "Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos... Cantares 8:7",
+  fraseFinal: "Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos...    Cantares 8:7",
 
   musica: "musica/nuestra-cancion.mp3",
 
