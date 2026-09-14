@@ -17,7 +17,7 @@ const BODA = {
   },
 
   recepcion: {
-    hora: "4:00 PM",
+    hora: "3:00 PM",
     lugar: "Salón El Mayo",
     direccion: "Dirección de la recepción",
     mapa: "https://maps.app.goo.gl/jqPcbL7X7roBsNRW9"
@@ -27,7 +27,7 @@ const BODA = {
 
   vestimenta: {
     titulo: "Formal",
-    texto: "Nos encantará verte celebrar con nosotros. Te pedimos que reserves el color blanco para la novia."
+    texto: "Nos encantará verte celebrar con nosotros. Te pedimos que reserves el color blanco exclusivamente para la novia."
   },
 
   ninos: {
@@ -41,9 +41,9 @@ const BODA = {
 
   itinerario: [
     { hora: "12:00 PM", titulo: "Ceremonia", detalle: "Uniremos nuestras vidas delante de Dios" },
-    { hora: "4:00 PM", titulo: "Bienvenida", detalle: "Recibimiento de invitados" },
-    { hora: "4:30 PM", titulo: "Entrada de los esposos", detalle: "Nuestro primer momento como esposos" },
-    { hora: "4:30 PM", titulo: "Comida", detalle: "Un banquete para celebrar juntos" },
+    { hora: "3:00 PM", titulo: "Bienvenida", detalle: "Recibimiento de invitados" },
+    { hora: "3:30 PM", titulo: "Entrada de los esposos", detalle: "Nuestro primer momento como esposos" },
+    { hora: "3:30 PM", titulo: "Comida", detalle: "Un banquete para celebrar juntos" },
     { hora: "7:00 PM", titulo: "Canción", detalle: "¡Nuestra canción!" }
   ]
 };
