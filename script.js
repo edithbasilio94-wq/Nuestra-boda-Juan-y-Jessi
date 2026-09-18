@@ -223,6 +223,23 @@ function prepararRSVP() {
   });
 }
 
+
+function prepararBoleto() {
+  const params = new URLSearchParams(window.location.search);
+  const familia = params.get("familia");
+  const pases = params.get("pases");
+
+  if (familia) {
+    poner("boletoTitulo", `¡Bienvenidos, ${familia}!`);
+  }
+  if (pases) {
+    const numero = parseInt(pases, 10);
+    const texto = numero === 1
+      ? "Este boleto es válido para 1 persona."
+      : `Este boleto es válido para ${numero} personas.`;
+    poner("boletoTexto", texto);
+  }
+}
 let yaAbierto = false;
 
 function abrirInvitacion() {
