@@ -272,6 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
   prepararAnimaciones();
   prepararMusica();
   prepararRSVP();
+  prepararBoleto();
 
 function prepararBoleto() {
   const params = new URLSearchParams(window.location.search);
